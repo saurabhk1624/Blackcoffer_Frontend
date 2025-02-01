@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@olton/metroui": "^5.0.13",
+    "bootstrap": "^5.3.3"
+  }
+}
