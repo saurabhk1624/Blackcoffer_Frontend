@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@olton/metroui": "^5.0.13",
-    "bootstrap": "^5.3.3"
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.7"
   }
 }
