@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   })
 
-  // Fetch dashboard data
   const dashboardData = await fetchDashboardData()
 
   if (
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         {
           label: "Count",
           data: dashboardData.sectorData.msg.map((item) => item.count),
-          backgroundColor: "rgba(75, 192, 192, 0.6)",
+          backgroundColor: "#ff9f40",
           borderColor: "rgba(75, 192, 192, 1)",
           borderWidth: 1,
         },
@@ -109,7 +108,6 @@ if (dashboardData.regionData && dashboardData.regionData.msg && dashboardData.re
   document.getElementById("regionChart").innerHTML = "No data available"
 }
 
-  // Create country statistics chart
   if (
     dashboardData.countryStatistics &&
     dashboardData.countryStatistics.msg &&
@@ -139,7 +137,7 @@ if (dashboardData.regionData && dashboardData.regionData.msg && dashboardData.re
             text: "Country Statistics",
           },
           legend: {
-            display: false, // Hide legend as we only have one dataset
+            display: false, 
           },
         },
         scales: {
@@ -164,10 +162,9 @@ if (dashboardData.regionData && dashboardData.regionData.msg && dashboardData.re
     document.getElementById("countryChart").innerHTML = "No data available"
   }
 
-  // Update data cards
-  document.getElementById("totalSales").textContent = `$${dashboardData.totalSales.toLocaleString()}`
-  document.getElementById("newCustomers").textContent = dashboardData.newCustomers.toLocaleString()
-  document.getElementById("conversionRate").textContent = `${dashboardData.conversionRate.toFixed(1)}%`
-  document.getElementById("avgOrderValue").textContent = `$${dashboardData.avgOrderValue.toLocaleString()}`
+  document.getElementById("totalData").textContent = dashboardData.totalData
+  document.getElementById("averageIntensity").textContent = dashboardData.averageIntensity
+  document.getElementById("averageLikelihood").textContent = dashboardData.averageLikelihood
+  document.getElementById("averageRelevance").textContent = dashboardData.averageRelevance
 })
 

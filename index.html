@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div id="loader-container"></div>
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar" class="active">
@@ -23,7 +24,7 @@
                 <!-- Main Navigation -->
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center justify-content-between">
+                        <a href="index.html" class="nav-link d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="fas fa-home me-2"></i>
                                 <span>Dashboards</span>
@@ -32,33 +33,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link active d-flex align-items-center">
+                        <a href="report.html" class="nav-link active d-flex align-items-center">
                             <i class="fas fa-chart-bar me-2"></i>
-                            <span>Analytics</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <i class="fas fa-users me-2"></i>
-                            <span>CRM</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <i class="fas fa-shopping-cart me-2"></i>
-                            <span>Ecommerce</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <i class="fas fa-graduation-cap me-2"></i>
-                            <span>Academy</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link d-flex align-items-center">
-                            <i class="fas fa-truck me-2"></i>
-                            <span>Logistics</span>
+                            <span>Report</span>
                         </a>
                     </li>
                 </ul>
@@ -86,31 +63,31 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Total Data</h5>
-                                <p class="card-text" id="totalSales">$0</p>
+                                <p class="card-text" id="totalData"></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">New Customers</h5>
-                                <p class="card-text" id="newCustomers">0</p>
+                                <h5 class="card-title">Average Intensity</h5>
+                                <p class="card-text" id="averageIntensity"></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Conversion Rate</h5>
-                                <p class="card-text" id="conversionRate">0%</p>
+                                <h5 class="card-title">Average Likelihood</h5>
+                                <p class="card-text" id="averageLikelihood"></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3 mb-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Average Order Value</h5>
-                                <p class="card-text" id="avgOrderValue">$0</p>
+                                <h5 class="card-title">Average Relevance</h5>
+                                <p class="card-text" id="averageRelevance"></p>
                             </div>
                         </div>
                     </div>
@@ -152,6 +129,17 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="js/script.js"></script>
+
+<script>
+    async function loadLoader() {
+        const response = await fetch("loader.html");
+        const loaderHtml = await response.text();
+        document.getElementById("loader-container").innerHTML = loaderHtml;
+    }
+
+    
+    loadLoader();
+</script>
 </body>
 </html>
 
